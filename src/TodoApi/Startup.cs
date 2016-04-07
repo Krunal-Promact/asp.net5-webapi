@@ -7,6 +7,7 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using TodoApi.Models;
 
 namespace TodoApi
 {
@@ -28,6 +29,9 @@ namespace TodoApi
         {
             // Add framework services.
             services.AddMvc();
+
+            services.AddSingleton<ITodoRepository, TodoRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
